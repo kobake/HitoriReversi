@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.os.Build;
 
 public class MainActivity extends Activity {
@@ -23,6 +24,17 @@ public class MainActivity extends Activity {
 					.add(R.id.container, new BoardFragment()).commit();
 		}
 		*/
+	}
+	
+	public void panelMethod(View v){
+		Button button = (Button)v;
+		// 自分自身を反転
+		if(button.getText().toString().equals("●")){
+			button.setText("○");
+		}
+		else{
+			button.setText("●");
+		}
 	}
 
 }
