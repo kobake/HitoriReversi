@@ -19,17 +19,14 @@ import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView.FindListener;
 import android.widget.Button;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+interface BoardClickListener{
+	public void onClick(int x, int y);
+}
+
 public class BoardFragment extends Fragment {
-	private Handler mHandler = new Handler();
-	private ChipTable mTable = new ChipTable();
 	private Button[] mButtons = new Button[4 * 4];
-	private int mCurrentValue = 1;
 
 	public BoardFragment() {
-		mTable.clear();		
 	}
 
 	@Override
@@ -49,7 +46,8 @@ public class BoardFragment extends Fragment {
 			return null;
 		}
 	}
-	public void initButtons(){
+	
+	public void initButtons(final BoardClickListener listener){
 		for(int y = 0; y < 4; y++){
 			for(int x = 0 ; x < 4; x++){
 				final int X = x;
@@ -60,16 +58,13 @@ public class BoardFragment extends Fragment {
 				mButtons[y * 4 + x].setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						if(mTable.onClick(X, Y, mCurrentValue)){
-							mCurrentValue *= -1;
-						}
-						resizeButtons();
+						listener.onClick(X, Y);
 					}
 				});
 			}
 		}
 	}
-	public void resizeButtons(){
+	public void resizeButtons(ChipTable chipTable){
 		//Log.i("test", "post w = " + v.getWidth());
 
 		// 盤面を正方形にする
@@ -92,7 +87,7 @@ public class BoardFragment extends Fragment {
 				b.setLayoutParams(params);
 				b.setX(x * size);
 				b.setY(y * size);
-				Chip chip = mTable.at(x, y);
+				Chip chip = chipTable.at(x, y);
 				if(chip.get() == 0){
 					b.setText("");
 				}
@@ -114,22 +109,12 @@ public class BoardFragment extends Fragment {
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		
-		// 見た目作成
-		initButtons();
 	}
 	
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		// サイズ調整
-		this.getView().post(new Runnable(){
-			@Override
-			public void run() {
-				resizeButtons();
-			}
-		});
 	}
 
 }
