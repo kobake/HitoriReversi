@@ -1,0 +1,2 @@
+# HitoriReversi
+リバーシしてもひとり。
