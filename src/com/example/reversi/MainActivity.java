@@ -26,15 +26,6 @@ public class MainActivity extends Activity {
 		*/
 	}
 	
-	public void panelMethod(View v){
-		Button button = (Button)v;
-		// 自分自身を反転
-		if(button.getText().toString().equals("●")){
-			button.setText("○");
-		}
-		else{
-			button.setText("●");
-		}
-	}
+	
 
 }
