@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.reversi.MainActivity"
+    tools:context="com.mysamp.reversi.MainActivity"
     tools:ignore="MergeRootFrame" >
 
     <LinearLayout
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.example.reversi.BoardFragment"
+        android:name="com.mysamp.reversi.BoardFragment"
         android:layout_width="match_parent"
         android:layout_height="354dp" />
 

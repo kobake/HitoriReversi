@@ -1,10 +1,11 @@
-package com.example.reversi;
+package com.mysamp.reversi;
 
 import java.util.ArrayList;
 import java.util.Timer;
 
-import com.example.reversi.logic.Chip;
-import com.example.reversi.logic.ChipTable;
+import com.mysamp.reversi.R;
+import com.mysamp.reversi.logic.Chip;
+import com.mysamp.reversi.logic.ChipTable;
 
 import android.R.integer;
 import android.app.Fragment;

@@ -1,4 +1,4 @@
-package com.example.reversi.logic;
+package com.mysamp.reversi.logic;
 
 import android.view.ViewGroup;
 import android.widget.Button;

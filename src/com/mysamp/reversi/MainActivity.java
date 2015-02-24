@@ -1,6 +1,7 @@
-package com.example.reversi;
+package com.mysamp.reversi;
 
-import com.example.reversi.logic.ChipTable;
+import com.mysamp.reversi.R;
+import com.mysamp.reversi.logic.ChipTable;
 
 import android.app.Activity;
 import android.app.ActionBar;

@@ -1,4 +1,4 @@
-package com.example.reversi.logic;
+package com.mysamp.reversi.logic;
 
 import android.R.integer;
 import android.view.ViewGroup;
